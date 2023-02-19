@@ -45,7 +45,7 @@ const Card = () => {
 
         <div className="footer">
           <div className="socials">
-              <a className="github link" href="https://github.com/bodatomas" target="_blank"></a>
+              <a className="github link" href="https://github.com/dvandyy" target="_blank"></a>
               <a className="linkedin link" href="https://www.linkedin.com/in/tomas-boda/" target="_blank"></a>
               <a className="insta link" href="https://www.instagram.com/tomasboda_/" target="_blank"></a>
               <a className="twitter link" href="https://twitter.com/t_bodaa" target="_blank"></a>
