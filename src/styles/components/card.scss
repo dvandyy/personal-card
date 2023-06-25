@@ -164,10 +164,24 @@
         }
         .twitter {
             background: url('/src/assets/icons/twitter.svg') center no-repeat;
+            position: relative;
             &:hover {
+                &::before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+            }
+            &::before {
+                content: '';
                 background: url('/src/assets/icons/twitter-hover.svg') center no-repeat;
-                transition: box-shadow 0.3s;
+                background-size: contain;
+                opacity: 0;
+                height: 30px;
+                border-radius: 50%;
+                width: 30px;
+                position: absolute;
                 box-shadow: 1px 2px 13px 4px rgba(3,169,244,0.75);
+                transition: opacity 0.3s;
             }
         }
 
