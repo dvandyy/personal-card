@@ -1,260 +1,262 @@
 .card {
-    // border: 1px solid rgba($color: #fff, $alpha: 0.85);
-    display: flex;
-    padding: 2em;
-    border-radius: 2em;
-    color: rgba($color: #fff, $alpha: 0.9);
-    background-color: rgba($color: #1a1a1a, $alpha: 0.6);
-    backdrop-filter: saturate(50%) blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: 'Ubuntu', sans-serif;
-    max-width: 600px;
+  // border: 1px solid rgba($color: #fff, $alpha: 0.85);
+  display: flex;
+  padding: 2em;
+  border-radius: 2em;
+  color: rgba($color: #fff, $alpha: 0.9);
+  background-color: rgba($color: #1a1a1a, $alpha: 0.6);
+  backdrop-filter: saturate(50%) blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Ubuntu', sans-serif;
+  min-width: 600px;
+  width: auto;
+  z-index: 10;
+  position: absolute;
+  box-shadow: 1px 10px 54px 0px rgba(26, 26, 26, 0.75);
+  gap: 2em;
+  @include for-mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: calc(100% - 30px);
+    padding: 1.5em;
+    gap: 1em;
+    min-width: unset;
+  }
+
+  .content {
     width: 100%;
-    z-index: 10;
-    position: absolute;
-    box-shadow: 1px 10px 54px 0px rgba(26,26,26,0.75);
-    gap: 2em;
-    @include for-mobile {
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1em;
+      @include for-mobile {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: calc(100% - 30px);
-        padding: 1.5em;
-        gap: 1em;
-    }
-
-    .content {
-        width: 100%;
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 1em;
-            @include for-mobile {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-            .contact-btn {
-                background-color: #fff;
-                padding: 10px 15px;
-                text-decoration: none;
-                color: #1a1a1a;
-                font-weight: bold;
-                border-radius: .5em;
-                opacity: 0.9;
-                transition: all .3s;
-                &:hover {
-                    background-color: #3134ff;
-                    color: #fff;
-                    transition: all .3s;
-                    box-shadow: 1px 2px 13px 4px rgba($color: #3134ff, $alpha: 0.75);
-                }
-                @include for-mobile {
-                    margin-top: 1em;
-                }
-            }
-        }
-        .position {
-            text-transform: uppercase;
-            opacity: 0.6;
-            letter-spacing: 3px;
-        }
-        .desc {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-bottom: 0.5em;
-            @include for-mobile {
-                grid-template-columns: 1fr;
-                margin-bottom: 0;
-            }
-            .status {
-                @include for-mobile {
-                    text-align: center;
-                    margin-bottom: 1em;
-                }
-                span {
-                    opacity: 0.9;
-                    font-weight: bold;
-                    display: block;
-                }
-                & span:first-child {
-                    opacity: 0.6;
-                    font-weight: normal;
-                    margin-right: 5px;
-                }
-            }
-        }
-    }
-    .location {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        span {
-            opacity: 0.8;
-        }
-        img {
-            opacity: 1;
-            max-width: 30px;
-        }
-    }
-
-    .photo {
-        max-width: 100px;
-        max-height: 100px;
-        width: 100%;
-        height: 100% ;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-        cursor: help;
-        &::after {
-            content: '👀';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            backdrop-filter: saturate(50%) blur(3px);
-            width: 100%;
-            height: 100%;
-            display: flex;
-            background-color: rgba($color: #1a1a1a, $alpha: 0.5);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: all .3s;
-        }
+        text-align: center;
+      }
+      .contact-btn {
+        background-color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: bold;
+        border-radius: 0.5em;
+        opacity: 0.9;
+        transition: all 0.3s;
         &:hover {
-            &::after {
-                opacity: 1;
-                transition: all .3s;
-            }
+          background-color: #3134ff;
+          color: #fff;
+          transition: all 0.3s;
+          box-shadow: 1px 2px 13px 4px rgba($color: #3134ff, $alpha: 0.75);
         }
-        img {
-            width: 100%;
-            height: 100%;
+        @include for-mobile {
+          margin-top: 1em;
         }
+      }
     }
-    .footer {
-        margin-top: 1em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .position {
+      text-transform: uppercase;
+      opacity: 0.6;
+      letter-spacing: 3px;
     }
-    .socials {
-        display: flex;
-        align-items: center;
-        gap: .5em;
-        .link {
-            background-size: contain !important;
-            display: block;
-            min-height: 30px;
-            min-width: 30px;
-            border-radius: 50%;
-            opacity: 0.9;
-            transition: box-shadow 0.3s;
-            &:hover {
-                background-size: contain;
-                height: 30px;
-                width: 30px;
-                opacity: 1;
-            }
+    .desc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 0.5em;
+      gap: 0.5em;
+      @include for-mobile {
+        grid-template-columns: 1fr;
+        margin-bottom: 0;
+      }
+      .status {
+        @include for-mobile {
+          text-align: center;
+          margin-bottom: 1em;
         }
-        .twitter {
-            background: url('/src/assets/icons/twitter.svg') center no-repeat;
-            position: relative;
-            &:hover {
-                &::before {
-                    opacity: 1;
-                    transition: opacity 0.3s;
-                }
-            }
-            &::before {
-                content: '';
-                background: url('/src/assets/icons/twitter-hover.svg') center no-repeat;
-                background-size: contain;
-                opacity: 0;
-                height: 30px;
-                border-radius: 50%;
-                width: 30px;
-                position: absolute;
-                box-shadow: 1px 2px 13px 4px rgba(3,169,244,0.75);
-                transition: opacity 0.3s;
-            }
+        span {
+          opacity: 0.9;
+          font-weight: bold;
+          display: block;
         }
-
-        .linkedin {
-            background: url('/src/assets/icons/linkedin.svg') center no-repeat;
-            position: relative;
-            &:hover {
-                &::before {
-                    opacity: 1;
-                    transition: opacity 0.3s;
-                }
-            }
-            &::before {
-                content: '';
-                background: url('/src/assets/icons/linkedin-hover.svg') center no-repeat;
-                background-size: contain;
-                opacity: 0;
-                height: 30px;
-                border-radius: 50%;
-                width: 30px;
-                position: absolute;
-                box-shadow: 1px 2px 13px 4px rgba(0,137,209,0.75);
-                transition: opacity 0.3s;
-            }
+        & span:first-child {
+          opacity: 0.6;
+          font-weight: normal;
+          margin-right: 5px;
         }
-        .github {
-            background: url('/src/assets/icons/github.svg') center no-repeat;
-            position: relative;
-            &:hover {
-                &::before {
-                    opacity: 1;
-                    transition: opacity 0.3s;
-                }
-            }
-           
-            &::before {
-                content: '';
-                background: url('/src/assets/icons/github-hover.svg') center center no-repeat;
-                background-size: contain;
-                opacity: 0;
-                height: 30px;
-                border-radius: 50%;
-                width: 30px;
-                position: absolute;
-                box-shadow: 1px 2px 13px 4px rgba(69,89,100,0.75);
-                transition: opacity 0.3s;
-            }
-        }
-
-        .insta {
-            background: url('/src/assets/icons/insta.svg') center no-repeat;
-            position: relative;
-            &:hover {
-                &::before {
-                    opacity: 1;
-                    transition: opacity 0.3s;
-                }
-            }
-           
-            &::before {
-                content: '';
-                background: #fff url('/src/assets/icons/insta-hover.svg') center no-repeat;
-                background-size: contain;
-                opacity: 0;
-                height: 30px;
-                border-radius: 50%;
-                width: 30px;
-                position: absolute;
-                box-shadow: 1px 2px 13px 4px rgba(255,185,0,0.75);
-                transition: opacity 0.3s;
-            }
-
-        }
-
+      }
     }
+  }
+  .location {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    span {
+      opacity: 0.8;
+    }
+    img {
+      opacity: 1;
+      max-width: 30px;
+    }
+  }
+
+  .photo {
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: help;
+    &::after {
+      content: '👀';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      backdrop-filter: saturate(50%) blur(3px);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      background-color: rgba($color: #1a1a1a, $alpha: 0.5);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .footer {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    .link {
+      background-size: contain !important;
+      display: block;
+      min-height: 30px;
+      min-width: 30px;
+      border-radius: 50%;
+      opacity: 0.9;
+      transition: box-shadow 0.3s;
+      &:hover {
+        background-size: contain;
+        height: 30px;
+        width: 30px;
+        opacity: 1;
+      }
+    }
+    .twitter {
+      background: url('/src/assets/icons/twitter.svg') center no-repeat;
+      position: relative;
+      &:hover {
+        &::before {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+      &::before {
+        content: '';
+        background: url('/src/assets/icons/twitter-hover.svg') center no-repeat;
+        background-size: contain;
+        opacity: 0;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        position: absolute;
+        box-shadow: 1px 2px 13px 4px rgba(3, 169, 244, 0.75);
+        transition: opacity 0.3s;
+      }
+    }
+
+    .linkedin {
+      background: url('/src/assets/icons/linkedin.svg') center no-repeat;
+      position: relative;
+      &:hover {
+        &::before {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+      &::before {
+        content: '';
+        background: url('/src/assets/icons/linkedin-hover.svg') center no-repeat;
+        background-size: contain;
+        opacity: 0;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        position: absolute;
+        box-shadow: 1px 2px 13px 4px rgba(0, 137, 209, 0.75);
+        transition: opacity 0.3s;
+      }
+    }
+    .github {
+      background: url('/src/assets/icons/github.svg') center no-repeat;
+      position: relative;
+      &:hover {
+        &::before {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+
+      &::before {
+        content: '';
+        background: url('/src/assets/icons/github-hover.svg') center center
+          no-repeat;
+        background-size: contain;
+        opacity: 0;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        position: absolute;
+        box-shadow: 1px 2px 13px 4px rgba(69, 89, 100, 0.75);
+        transition: opacity 0.3s;
+      }
+    }
+
+    .insta {
+      background: url('/src/assets/icons/insta.svg') center no-repeat;
+      position: relative;
+      &:hover {
+        &::before {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+
+      &::before {
+        content: '';
+        background: #fff url('/src/assets/icons/insta-hover.svg') center
+          no-repeat;
+        background-size: contain;
+        opacity: 0;
+        height: 30px;
+        border-radius: 50%;
+        width: 30px;
+        position: absolute;
+        box-shadow: 1px 2px 13px 4px rgba(255, 185, 0, 0.75);
+        transition: opacity 0.3s;
+      }
+    }
+  }
 }
