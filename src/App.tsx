@@ -1,6 +1,6 @@
 import './styles/styles.scss'
 import Card from './components/Card'
-import video from './assets/Lights.mp4'
+import video from './assets/Black.mp4'
 
 function App() {
   return (

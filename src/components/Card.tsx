@@ -14,7 +14,7 @@ const Card = () => {
             <h1>Tomáš Boďa</h1>
             <p className="position">Software developer</p>
           </div>
-          <a href="mailto:tomasboda77@gmail.com" className="contact-btn">Contact Me</a>
+          <a href="mailto:tomasboda.dev@gmail.com" className="contact-btn">Contact Me</a>
         </div>
 
         <div className="desc">
@@ -48,7 +48,7 @@ const Card = () => {
               <a className="github link" href="https://github.com/dvandyy" target="_blank"></a>
               <a className="linkedin link" href="https://www.linkedin.com/in/tomas-boda/" target="_blank"></a>
               <a className="insta link" href="https://www.instagram.com/tomasboda_/" target="_blank"></a>
-              <a className="twitter link" href="https://twitter.com/t_bodaa" target="_blank"></a>
+              <a className="twitter link" href="https://twitter.com/_dvandy" target="_blank"></a>
           </div>
           <p className="location"><span>Slovakia</span> <img src={location} alt="location-mark"/> </p>
         </div>

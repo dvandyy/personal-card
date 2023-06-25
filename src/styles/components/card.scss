@@ -47,10 +47,10 @@
                 opacity: 0.9;
                 transition: all .3s;
                 &:hover {
-                    background-color: #FF3131;
+                    background-color: #3134ff;
                     color: #fff;
                     transition: all .3s;
-                    box-shadow: 1px 2px 13px 4px rgba($color: #FF3131, $alpha: 0.75);
+                    box-shadow: 1px 2px 13px 4px rgba($color: #3134ff, $alpha: 0.75);
                 }
                 @include for-mobile {
                     margin-top: 1em;
@@ -166,7 +166,6 @@
             background: url('/src/assets/icons/twitter.svg') center no-repeat;
             &:hover {
                 background: url('/src/assets/icons/twitter-hover.svg') center no-repeat;
-                transition: background 0.3s;
                 transition: box-shadow 0.3s;
                 box-shadow: 1px 2px 13px 4px rgba(3,169,244,0.75);
             }
@@ -174,30 +173,71 @@
 
         .linkedin {
             background: url('/src/assets/icons/linkedin.svg') center no-repeat;
+            position: relative;
             &:hover {
+                &::before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+            }
+            &::before {
+                content: '';
                 background: url('/src/assets/icons/linkedin-hover.svg') center no-repeat;
-                transition: background 0.3s;
-                transition: box-shadow 0.3s;
+                background-size: contain;
+                opacity: 0;
+                height: 30px;
+                border-radius: 50%;
+                width: 30px;
+                position: absolute;
                 box-shadow: 1px 2px 13px 4px rgba(0,137,209,0.75);
+                transition: opacity 0.3s;
             }
         }
         .github {
             background: url('/src/assets/icons/github.svg') center no-repeat;
+            position: relative;
             &:hover {
-                background: #fff url('/src/assets/icons/github-hover.svg') center center no-repeat;
-                transition: background 0.3s;
-                transition: box-shadow 0.3s;
+                &::before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+            }
+           
+            &::before {
+                content: '';
+                background: url('/src/assets/icons/github-hover.svg') center center no-repeat;
+                background-size: contain;
+                opacity: 0;
+                height: 30px;
+                border-radius: 50%;
+                width: 30px;
+                position: absolute;
                 box-shadow: 1px 2px 13px 4px rgba(69,89,100,0.75);
+                transition: opacity 0.3s;
             }
         }
 
         .insta {
             background: url('/src/assets/icons/insta.svg') center no-repeat;
+            position: relative;
             &:hover {
+                &::before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+            }
+           
+            &::before {
+                content: '';
                 background: #fff url('/src/assets/icons/insta-hover.svg') center no-repeat;
-                transition: background 0.3s;
-                transition: box-shadow 0.3s;
+                background-size: contain;
+                opacity: 0;
+                height: 30px;
+                border-radius: 50%;
+                width: 30px;
+                position: absolute;
                 box-shadow: 1px 2px 13px 4px rgba(255,185,0,0.75);
+                transition: opacity 0.3s;
             }
 
         }
