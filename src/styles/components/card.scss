@@ -66,8 +66,8 @@
     .desc {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-bottom: 0.5em;
-      gap: 0.5em;
+      margin-bottom: 1em;
+      column-gap: 1em;
       @include for-mobile {
         grid-template-columns: 1fr;
         margin-bottom: 0;
@@ -85,7 +85,6 @@
         & span:first-child {
           opacity: 0.6;
           font-weight: normal;
-          margin-right: 5px;
         }
       }
     }
@@ -141,15 +140,20 @@
     }
   }
   .footer {
-    margin-top: 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
   .socials {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 1em;
+    @include for-mobile {
+      margin-bottom: 1em;
+    }
     .link {
       background-size: contain !important;
       display: block;
